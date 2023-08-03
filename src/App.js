@@ -31,7 +31,7 @@ const App = () => {
   };
 
   const handleAddWatched = (movie) => {
-    setWatched((watched) => [...watched, movie]);
+    setWatched((watched) => [movie, ...watched]);
     handleDeselectMovie();
   };
 
@@ -50,10 +50,10 @@ const App = () => {
         <Box>
           {/* {isLoading ? <Loader /> : <MovieList movies={movies} />} */}
           {isLoading && <Loader />}
+          {error && <ErrorMessage message={error} />}
           {!isLoading && !error && (
             <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
           )}
-          {error && <ErrorMessage message={error} />}
         </Box>
         <Box>
           {selectedId ? (

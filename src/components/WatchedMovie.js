@@ -3,7 +3,10 @@ import { FaCircleXmark } from "react-icons/fa6";
 const WatchedMovie = ({ movie, onRemoveWatched }) => {
   return (
     <li>
-      <img src={movie.poster} alt={`${movie.title} poster`} />
+      <img
+        src={movie.poster === "N/A" ? "/default-movie.png" : movie.poster}
+        alt={`${movie.title} poster`}
+      />
       <h3>{movie.title}</h3>
       <div>
         <p>

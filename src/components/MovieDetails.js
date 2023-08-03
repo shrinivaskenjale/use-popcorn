@@ -52,6 +52,7 @@ const MovieDetails = ({
 
   useKey("Escape", onDeselectMovie);
 
+  // Effect to change document's title
   useEffect(() => {
     if (!title) return;
 
@@ -83,7 +84,10 @@ const MovieDetails = ({
             <button className="btn-back" onClick={onDeselectMovie}>
               <FaTimes />
             </button>
-            <img src={poster} alt={`Poster of ${movie} movie`} />
+            <img
+              src={poster === "N/A" ? "/default-movie.png" : poster}
+              alt={`Poster of ${movie} movie`}
+            />
             <div className="details-overview">
               <h2>{title}</h2>
               <p>
