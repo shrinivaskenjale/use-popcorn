@@ -28,7 +28,7 @@ export const useMovies = (query) => {
           throw new Error("Movie not found");
         }
         setMovies(data.Search);
-        setError("");
+        // setError("");
       } catch (err) {
         if (err.name !== "AbortError") {
           setError(err.message);
